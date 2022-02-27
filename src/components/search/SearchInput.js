@@ -19,10 +19,9 @@ export const SearchInput = ({results}) => {
     const response = await fetch(
       `https://g.tenor.com/v1/search_suggestions?q=${text}&key=${API_KEY}`,
     );
-    const jsonData = await response.json();
-    results(jsonData);
+    const data = await response.json();
+    results({data, text});
   }, 500);
-
   return (
     <View style={styles.container}>
       <Image
@@ -31,11 +30,10 @@ export const SearchInput = ({results}) => {
       />
       <TextInput
         style={styles.input}
-        onChangeText={handleChangeText}
         placeholder="Search HIPHY"
         placeholderTextColor={'grey'}
-        returnKeyType={'search'}
-        selectionColor={'red'}
+        onChangeText={handleChangeText}
+        autoCorrect={false}
         autoCapitalize={'none'}
         autoComplete={'off'}
       />
@@ -46,12 +44,10 @@ export const SearchInput = ({results}) => {
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderWidth: 1,
     backgroundColor: 'white',
+    alignItems: 'center',
     borderRadius: 12,
-    height: 40,
+    height: 45,
     margin: 12,
     padding: 10,
   },
@@ -60,7 +56,9 @@ const styles = StyleSheet.create({
     height: 22,
   },
   input: {
+    color: 'black',
+    height: 45,
+    paddingHorizontal: 12,
     flex: 1,
-    paddingHorizontal: 6,
   },
 });
