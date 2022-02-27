@@ -43,7 +43,7 @@ Note: If you face any errors while running on Android, create a file named `loca
 
 ### Screen Recording
 
-
+https://user-images.githubusercontent.com/1816153/155897636-6b0a65a9-4a57-4bbb-8296-650af18e87b0.mp4
 
 
 
