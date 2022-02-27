@@ -16,6 +16,7 @@ const GifList = ({query}) => {
   };
   return (
     <FlatList
+      style={{backgroundColor: '#0F111B'}}
       data={gifs}
       renderItem={renderItem}
       numColumns={2}

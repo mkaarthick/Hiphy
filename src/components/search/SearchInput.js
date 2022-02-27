@@ -21,7 +21,7 @@ export const SearchInput = ({results}) => {
     );
     const jsonData = await response.json();
     results(jsonData);
-  }, 1000);
+  }, 500);
 
   return (
     <View style={styles.container}>
@@ -33,6 +33,11 @@ export const SearchInput = ({results}) => {
         style={styles.input}
         onChangeText={handleChangeText}
         placeholder="Search HIPHY"
+        placeholderTextColor={'grey'}
+        returnKeyType={'search'}
+        selectionColor={'red'}
+        autoCapitalize={'none'}
+        autoComplete={'off'}
       />
     </View>
   );
@@ -44,6 +49,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderWidth: 1,
+    backgroundColor: 'white',
     borderRadius: 12,
     height: 40,
     margin: 12,

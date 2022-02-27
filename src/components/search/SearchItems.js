@@ -18,8 +18,8 @@ export const SearchItems = ({data, trending}) => {
         <Image
           source={
             trending
-              ? require('../../../assets/icons/trend.png')
-              : require('../../../assets/icons/search.png')
+              ? require('../../../assets/icons/trend_red.png')
+              : require('../../../assets/icons/search_color.png')
           }
           style={styles.trendIconStyle}
         />
@@ -47,10 +47,12 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     fontSize: 18,
     paddingBottom: 12,
+    color: 'white',
   },
   itemText: {
     fontSize: 16,
-    paddingHorizontal: 6,
+    paddingHorizontal: 12,
+    color: 'white',
   },
   trendIconStyle: {
     width: 32,
