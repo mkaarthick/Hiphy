@@ -4,8 +4,10 @@ import {FlatList} from 'react-native';
 import {useGif} from './hooks/useGifs';
 import GifItem from './GifItem';
 
-const GifList = () => {
-  const {gifs, fetchMore} = useGif();
+const GifList = ({query}) => {
+  const {gifs, fetchMore} = useGif(
+    query ? {path: 'search', query: query} : {path: 'trending'},
+  );
 
   const renderItem = ({item}) => {
     const {media} = item;

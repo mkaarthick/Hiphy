@@ -1,10 +1,14 @@
-import React, {useState, useEffect, useCallback} from 'react';
+import {useState, useEffect, useCallback} from 'react';
+import {API_KEY, BASE_URL} from '../Utils';
 
-const URL = 'https://g.tenor.com/v1/trending?key=32FFS8Z2962Q';
-export const useGif = () => {
+export const useGif = ({path, query}) => {
   const [next, setNext] = useState(null);
   const [gifs, setGifs] = useState([]);
   const [shouldFetch, setShouldFetch] = useState(true);
+  let URL = `${BASE_URL}/${path}?key=${API_KEY}`;
+  if (query) {
+    URL = `${BASE_URL}/${path}?q=${query}&key=${API_KEY}`;
+  }
 
   const fetchMore = useCallback(() => setShouldFetch(true), []);
   useEffect(() => {

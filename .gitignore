@@ -58,3 +58,4 @@ buck-out/
 /ios/Pods/
 *.lock
 .eslintcache
+!/src/screens/DetailSearchScreen.js
